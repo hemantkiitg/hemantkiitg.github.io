@@ -10,7 +10,7 @@ redirect_from:
 
 ## About me
 
-Hi, my name is Oscar Mañas.
+Hi, my name is Hemant.
 
 I am a PhD student at [Mila](https://mila.quebec/en/) and [Université de Montréal](https://diro.umontreal.ca/english/home/), advised by Prof. [Aishwarya Agrawal](https://www.iro.umontreal.ca/~agrawal/). I am also a research scientist intern at [Meta AI](https://ai.meta.com/research/), advised by Dr. [Michal Drozdzal](https://www.linkedin.com/in/michal-drozdzal-a36b9b42) and Prof. [Adriana Romero](https://sites.google.com/site/adriromsor/home).
 
