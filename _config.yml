@@ -9,11 +9,11 @@
 locale                   : "en-US"
 title                    : "Oscar Mañas"
 title_separator          : "-"
-name                     : &name "Oscar Mañas"
+name                     : &name "Hemant Kumar"
 description              : &description "PhD Student in Deep Learning"
-url                      : https://oscmansan.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://hemantkiitg.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "oscmansan/oscmansan.github.io"
+repository               : "hemantkiitg/hemantkiitg.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -80,13 +80,13 @@ analytics:
 
 # Site Author
 author:
-  name             : "Oscar Mañas"
+  name             : "Hemant Kumar"
   avatar           : "Oscar Manas 07_square.jpg"
   bio              : "PhD Student in Deep Learning"
   location         : "Montreal, Canada"
   employer         :
   pubmed           :
-  googlescholar    : "https://scholar.google.com/citations?user=Crn-tf0AAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?hl=en&user=_0fHq-IAAAAJ"
   email            :
   researchgate     :
   uri              :
@@ -96,20 +96,20 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "oscmansan"
+  github           : "hemantkiitg"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      :
   lastfm           :
-  linkedin         : "oscmansan"
+  linkedin         : "hemantkiitg"
   orcid            :
   pinterest        :
   soundcloud       :
   stackoverflow    :
   steam            :
   tumblr           :
-  twitter          : "oscmansan"
+  twitter          : "HEMANT22266203"
   vine             :
   weibo            :
   xing             :
