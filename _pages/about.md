@@ -12,7 +12,7 @@ redirect_from:
 
 Hi, my name is Hemant.
 
-I am a PhD student at [Mila](https://mila.quebec/en/) and [Université de Montréal](https://diro.umontreal.ca/english/home/), advised by Prof. [Aishwarya Agrawal](https://www.iro.umontreal.ca/~agrawal/). I am also a research scientist intern at [Meta AI](https://ai.meta.com/research/), advised by Dr. [Michal Drozdzal](https://www.linkedin.com/in/michal-drozdzal-a36b9b42) and Prof. [Adriana Romero](https://sites.google.com/site/adriromsor/home).
+I am a PhD student at [Université de Montréal](https://www.umontreal.ca/) at the Biochemistry Department, advised by Dr. [Adrian Serohijos](http://www.serohijoslab.org/).
 
 My research interests lie at the intersection of computer vision and natural language processing. I believe that, like humans (and other animals), AI systems should have a holistic understanding of the world around them. This means working with multiple sensory modalities, among which vision and language arise as particularly interesting. On one hand, they are complementary: vision is a low-level perceptual modality, while language is an abstract human construct. On the other hand, they are believed to be two essential modalities for solving [AI-complete problems](https://en.wikipedia.org/wiki/AI-complete).
 
