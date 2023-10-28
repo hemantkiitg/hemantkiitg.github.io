@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Oscar Mañas"
 title_separator          : "-"
 name                     : &name "Hemant Kumar"
-description              : &description "PhD Student in Deep Learning"
+description              : &description "PhD Student in Biochemistry"
 url                      : https://hemantkiitg.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "hemantkiitg/hemantkiitg.github.io"
@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : oscmansan
+  username               : HEMANT22266203
 facebook:
   username               :
   app_id                 :
@@ -82,13 +82,13 @@ analytics:
 author:
   name             : "Hemant Kumar"
   avatar           : "Oscar Manas 07_square.jpg"
-  bio              : "PhD Student in Deep Learning"
+  bio              : "PhD Student in Biochemistry"
   location         : "Montreal, Canada"
   employer         :
   pubmed           :
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=_0fHq-IAAAAJ"
   email            :
-  researchgate     :
+  researchgate     : "https://www.researchgate.net/profile/Hemant-Kumar-7"
   uri              :
   bitbucket        :
   codepen          :
