@@ -3,7 +3,7 @@ title: "Engineered variants of the Ras effector protein RASSF5 (NORE1A) promote 
 collection: publications
 year: 2021
 venue: 'Journal of Biological Chemistry'
-authors: 'Anamika Singh, Ariel Erijman, Ashish Noronha, Hemant Kumar, Yoav Peleg, Yosef Yarden, Julia M Shifman'
+authors: 'Anamika Singh, Ariel Erijman, Ashish Noronha, **Hemant Kumar**, Yoav Peleg, Yosef Yarden, Julia M Shifman'
 paperurl: 'https://doi.org/10.1016/j.jbc.2021.101353'
 bibtex: "@article{Singh2021,
   doi = {10.1016/j.jbc.2021.101353},
