@@ -1,7 +1,6 @@
 ---
 title: "Structural and functional role of invariant water molecules in matrix metalloproteinases: a data-mining approach"
 collection: publications
-permalink: /publication/2021-03-manas2021seasonal
 year: 2021
 venue: 'Journal of Biomolecular Structure and Dynamics'
 authors: 'Hemant Kumar, Suraj Kumar Mandal, Prerana Gogoi, Shankar Prasad Kanaujia'
