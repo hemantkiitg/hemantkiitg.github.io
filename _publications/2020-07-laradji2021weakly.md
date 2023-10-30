@@ -1,7 +1,6 @@
 ---
 title: "Engineered variants of the Ras effector protein RASSF5 (NORE1A) promote anticancer activities in lung adenocarcinoma"
 collection: publications
-permalink: /publication/2020-07-laradji2021weakly
 year: 2021
 venue: 'Journal of Biological Chemistry'
 authors: 'Anamika Singh, Ariel Erijman, Ashish Noronha, Hemant Kumar, Yoav Peleg, Yosef Yarden, Julia M Shifman'
