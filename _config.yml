@@ -1,4 +1,4 @@
-nt# Welcome to Jekyll!
+# Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
 # which you are expected to set up once and rarely need to edit after that.
@@ -7,13 +7,13 @@ nt# Welcome to Jekyll!
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Hemant Kumar"
+title                    : "Oscar Mañas"
 title_separator          : "-"
-name                     : &name "Hemant Kumar"
-description              : &description "The personal website of Hemant"
-url                      : https://hemantkiitg.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+name                     : &name "Oscar Mañas"
+description              : &description "PhD Student in Deep Learning"
+url                      : https://oscmansan.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "hemantkiitg/hemantkiitg.github.io"
+repository               : "oscmansan/oscmansan.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : HEMANT22266203
+  username               : oscmansan
 facebook:
   username               :
   app_id                 :
@@ -80,15 +80,15 @@ analytics:
 
 # Site Author
 author:
-  name             : "Hemant Kumar"
-  avatar           : "picture.jpg"
-  bio              : "PhD Candidate in Biochemistry"
+  name             : "Oscar Mañas"
+  avatar           : "Oscar Manas 07_square.jpg"
+  bio              : "PhD Student in Deep Learning"
   location         : "Montreal, Canada"
   employer         :
   pubmed           :
-  googlescholar    : "https://scholar.google.com/citations?hl=en&user=_0fHq-IAAAAJ"
-  email            : "hemant.kumar@umontreal.ca"
-  researchgate     : "https://www.researchgate.net/profile/Hemant-Kumar-7"
+  googlescholar    : "https://scholar.google.com/citations?user=Crn-tf0AAAAJ"
+  email            :
+  researchgate     :
   uri              :
   bitbucket        :
   codepen          :
@@ -96,20 +96,20 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "hemantkiitg"
+  github           : "oscmansan"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      :
   lastfm           :
-  linkedin         : "hemantkiitg"
+  linkedin         : "oscmansan"
   orcid            :
   pinterest        :
   soundcloud       :
   stackoverflow    :
   steam            :
   tumblr           :
-  twitter          : "HEMANT22266203"
+  twitter          : "oscmansan"
   vine             :
   weibo            :
   xing             :
