@@ -1,10 +1,21 @@
 ---
-title: "Seasonal Contrast: Unsupervised Pre-Training From Uncurated Remote Sensing Data"
+title: "Structural and functional role of invariant water molecules in matrix metalloproteinases: a data-mining approach"
 collection: publications
-permalink: /publication/2021-03-manas2021seasonal
 year: 2021
-venue: 'IEEE/CVF International Conference on Computer Vision'
-authors: 'Oscar Mañas, Alexandre Lacoste, Xavier Giro-i-Nieto, David Vazquez, Pau Rodriguez'
-paperurl: 'https://openaccess.thecvf.com/content/ICCV2021/html/Manas_Seasonal_Contrast_Unsupervised_Pre-Training_From_Uncurated_Remote_Sensing_Data_ICCV_2021_paper.html'
-bibtex: "@inproceedings{manas2021seasonal,\n  title={Seasonal Contrast: Unsupervised Pre-Training From Uncurated Remote Sensing Data},\n  author={Manas, Oscar and Lacoste, Alexandre and Giro-i-Nieto, Xavier and Vazquez, David and Rodriguez, Pau},\n  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\n  pages={9414-9423}\n  month={October},\n  year={2021}\n}"
+venue: 'Journal of Biomolecular Structure and Dynamics'
+authors: '**Hemant Kumar**, Suraj Kumar Mandal, Prerana Gogoi, Shankar Prasad Kanaujia'
+paperurl: 'https://www.tandfonline.com/doi/full/10.1080/07391102.2021.1938683'
+bibtex: "@article{Kumar2021,
+  doi = {10.1080/07391102.2021.1938683},
+  url = {https://doi.org/10.1080/07391102.2021.1938683},
+  year = {2021},
+  month = jun,
+  publisher = {Informa {UK} Limited},
+  volume = {40},
+  number = {20},
+  pages = {10074--10085},
+  author = {Hemant Kumar and Suraj Kumar Mandal and Prerana Gogoi and Shankar Prasad Kanaujia},
+  title = {Structural and functional role of invariant water molecules in matrix metalloproteinases: a data-mining approach},
+  journal = {Journal of Biomolecular Structure and Dynamics}
+}"
 ---
