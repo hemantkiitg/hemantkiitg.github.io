@@ -19,6 +19,8 @@ I obtained a [M.Sc. in Structural & Molecular Biochemistry](https://www.bio.huji
 
 I am a keen and dedicated learner with 4+ years of research experience in the areas of Bioinformatics, Biostatistics, Molecular Biology, Protein purification and characterization. Hands-on experience in molecular biology (eg. Nuclein acid extraction, PCR, cloning, gene tagging), protein purification, and spectroscopy techniques. Managed 3 research projects and established fruitful collaborations which resulted in 2 publications in peer-reviewed journals and a book chapter.
 
+My detailed [CV or Resume](https://drive.google.com/file/d/1kw9TC-wyZTTiBhwBYm9e0Ab7zVWJZTgI/view?usp=drive_link) 
+
 ## Education
 
 
