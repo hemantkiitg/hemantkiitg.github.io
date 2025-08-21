@@ -21,13 +21,3 @@ I am a keen and dedicated learner with 4+ years of research experience in the ar
 
 My detailed [CV or Resume](https://drive.google.com/file/d/1EhOY5ju_gk2kaCcNHcKKdLCWgi63Ukvo/view?usp=sharing) 
 
-## Education
-
--------------------
--------------------
-
-
-## Awards & Achievements
-
--------------------
--------------------
