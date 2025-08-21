@@ -65,13 +65,6 @@ Talks
   <li>Conference presentation on vaccine design against HPV, HUJI 2021</li>  
 </ul>
 
-Teaching
-======
-<ul>
-  <li>Mentor – Peer Mentorship Program, Saathi Counselling Club (IIT Guwahati)</li>  
-  <li>Maths and Science Teacher – Disha (NGO initiative)</li>  
-</ul>
-
 Service and Leadership
 ======
 * Mentor, Peer Mentorship Program (IIT Guwahati)  
@@ -81,7 +74,7 @@ Service and Leadership
 
 Awards & Achievements
 ======
-* Excellence Scholarship, UdeM (CAD 6000)  
+* Excellence Scholarship 2023, UdeM (CAD 6000)  
 * Tuition Fee Exemption, UdeM (CAD 20,000/year)  
 * Graduate Tuition Fees Scholarship, Hebrew University (USD 3600)  
 * Research Student Fellowship, Hebrew University (USD 12,000)  
