@@ -5,10 +5,16 @@ permalink: /portfolio/
 author_profile: true
 ---
 
-{% include base_path %}
+<h2>My Biological Picture Collection</h2>
+<p>Click any thumbnail to open, then zoom/pan inside the lightbox.</p>
 
+<div class="gallery-grid" id="gallery">
+  <figure class="gallery-item" data-full="/assets/images/biology/full/cell1.jpg" data-caption="E. coli microcolony, GFP channel" tabindex="0" role="button" aria-label="Open image">
+    <img src="/assets/images/biology/thumbs/cell1.jpg" alt="E. coli microcolony, GFP channel" loading="lazy">
+    <figcaption class="caption">E. coli microcolony, GFP</figcaption>
+  </figure>
 
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
+  <!-- add more <figure> blocks here -->
+</div>
 
+<!-- lightbox + script from my earlier message -->
