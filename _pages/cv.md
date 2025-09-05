@@ -13,19 +13,16 @@ Education
 ======
 * Ph.D. in Biochemistry, Université de Montréal (UdeM), Canada (Jan 2022 – ongoing)  
   * Thesis: "Cellular & systems-level modulation of the antimicrobial resistance (AMR) fitness landscape"  
-  * Advisor: Dr. Adrian W. Serohijos  
-  * Cumulative Grade: A (4.0/4.3)
+  * Advisor: Dr. Adrian W. Serohijos
 
 * M.Sc. in Structural & Molecular Biochemistry, The Hebrew University of Jerusalem (HUJI), Israel (Sep 2019 – Dec 2021)  
   * Thesis: "Development of a highly immunogenic cross-protective vaccine against HPV"  
-  * Advisor: Dr. Julia M. Shifman  
-  * Cumulative Grade: 91.12  
+  * Advisor: Dr. Julia M. Shifman 
   * Awards: Graduate Tuition Fees Scholarship, Research Student Fellowship  
 
 * B.Tech. in Biotechnology, Indian Institute of Technology (IIT) Guwahati, India (Jul 2015 – Jun 2019)  
   * Thesis: "Structural and functional role of invariant water (IW) molecules in MMPs"  
-  * Advisor: Dr. Shankar P. Kanaujia  
-  * Cumulative GPA: 7.30  
+  * Advisor: Dr. Shankar P. Kanaujia
 
 Work Experience
 ======
