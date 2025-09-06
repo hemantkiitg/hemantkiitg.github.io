@@ -1,6 +1,8 @@
 main:
   - title: "Home"
     url: /
+  - title: "CV"
+    url: /cv/
   - title: "Publications"
     url: /publications/
   - title: "Portfolio"
@@ -9,5 +11,4 @@ main:
     url: /ai/webllm/
   - title: "AI Tools"
     url: /ai/tools/
-  - title: "CV"
-    url: /cv/
+
