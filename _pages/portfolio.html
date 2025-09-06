@@ -7,104 +7,125 @@ author_profile: true
 
 {% include base_path %}
 
-{%- comment -%}
-SECTION 1: assets/images/portfolio/
-- Collect all static files under the folder
-- Keep only images with extensions: jpg/jpeg/png/gif/webp (case-insensitive)
-{%- endcomment -%}
-{% assign folder1_all = site.static_files | where_exp: "f", "f.path contains '/assets/images/portfolio/'" %}
-{% assign gallery1 = "" | split: "" %}
-{% for f in folder1_all %}
-  {% assign ext = f.extname | downcase %}
-  {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.gif' or ext == '.webp' %}
-    {% assign gallery1 = gallery1 | push: f %}
-  {% endif %}
-{% endfor %}
-{% assign gallery1 = gallery1 | sort: "path" | reverse %}
+<h2>Gallery</h2>
+<p>Click any image → zoom with mouse wheel or +/−, drag to pan, ←/→ to switch, Esc to close.</p>
 
-<section class="auto-gallery gallery-one">
-  <h2>Inside lab fun</h2>
-  {% if gallery1.size == 0 %}
-    <p>No images yet. Add some to <code>assets/images/portfolio/</code>.</p>
-  {% else %}
-    <div class="gallery-grid">
-      {% for f in gallery1 %}
-        <figure class="gallery-card">
-          <a href="{{ f.path }}" target="_blank" rel="noopener">
-            <img src="{{ f.path }}" alt="{{ f.name | split:'.' | first }}" loading="lazy">
-          </a>
-          <figcaption>{{ f.name }}</figcaption>
-        </figure>
-      {% endfor %}
-    </div>
-  {% endif %}
-</section>
+{% assign dir1 = "/assets/images/portfolio1/" %}
+{% assign dir2 = "/assets/images/portfolio2/" %}
+{% assign imgs = site.static_files
+  | where_exp:"f","(f.path contains dir1 or f.path contains dir2) and
+                  (f.extname == '.jpg' or f.extname == '.jpeg' or f.extname == '.png' or f.extname == '.gif' or f.extname == '.webp' or f.extname == '.svg')"
+  | sort:"name" %}
 
-<hr>
-
-{%- comment -%}
-SECTION 2: assets/images/portfolio2/
-(same filtering logic)
-{%- endcomment -%}
-{% assign folder2_all = site.static_files | where_exp: "f", "f.path contains '/assets/images/portfolio2/'" %}
-{% assign gallery2 = "" | split: "" %}
-{% for f in folder2_all %}
-  {% assign ext = f.extname | downcase %}
-  {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.gif' or ext == '.webp' %}
-    {% assign gallery2 = gallery2 | push: f %}
-  {% endif %}
-{% endfor %}
-{% assign gallery2 = gallery2 | sort: "path" | reverse %}
-
-<section class="auto-gallery gallery-two">
-  <h2>Outside lab fun</h2>
-  {% if gallery2.size == 0 %}
-    <p>No images yet. Add some to <code>assets/images/portfolio2/</code>.</p>
-  {% else %}
-    <div class="gallery-grid">
-      {% for f in gallery2 %}
-        <figure class="gallery-card">
-          <a href="{{ f.path }}" target="_blank" rel="noopener">
-            <img src="{{ f.path }}" alt="{{ f.name | split:'.' | first }}" loading="lazy">
-          </a>
-          <figcaption>{{ f.name }}</figcaption>
-        </figure>
-      {% endfor %}
-    </div>
-  {% endif %}
-</section>
+<div class="gallery-grid" id="gallery">
+  {% for f in imgs %}
+  <figure class="gallery-item"
+          data-full="{{ f.path | relative_url }}"
+          data-caption="{{ f.name }}">
+    <img src="{{ f.path | relative_url }}"
+         alt="{{ f.name | replace:'_',' ' | replace:'-',' ' }}"
+         loading="lazy">
+    <figcaption class="caption">{{ f.name | replace:'_',' ' }}</figcaption>
+  </figure>
+  {% endfor %}
+</div>
 
 <style>
-  .auto-gallery { margin: 1.5rem 0; }
-  .auto-gallery h2 { margin-bottom: .75rem; }
-
-  .gallery-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  @media (max-width:1100px){ .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width:700px){ .gallery-grid { grid-template-columns: 1fr; } }
-
-  .gallery-card {
-    margin: 0;
-    padding: .5rem;
-    border: 1px solid #e6e6e6;
-    border-radius: .75rem;
-    background: #fff;
-    overflow: hidden;
-  }
-  .gallery-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: .5rem;
-  }
-  .gallery-card figcaption {
-    text-align: center;
-    font-size: .85rem;
-    color: #666;
-    margin-top: .5rem;
-    word-break: break-word;
-  }
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.gallery-item{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.08);background:#fafafa;cursor:zoom-in}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block}
+.caption{position:absolute;left:0;right:0;bottom:0;padding:6px 10px;font-size:.85rem;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,0) 0,rgba(0,0,0,.55) 85%)}
+dialog#lightbox{width:min(96vw,1400px);height:min(92vh,1000px);border:none;padding:0;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.lightbox-wrap{position:relative;width:100%;height:100%;background:#111}
+.lb-toolbar{position:absolute;top:10px;right:10px;display:flex;gap:8px;z-index:2}
+.lb-btn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);color:#fff;padding:6px 10px;border-radius:10px}
+.lb-caption{position:absolute;left:0;right:0;bottom:0;color:#eee;font-size:.95rem;padding:12px 16px;background:linear-gradient(180deg,rgba(0,0,0,0) 0,rgba(0,0,0,.75) 85%)}
+.viewer{position:absolute;inset:0;overflow:hidden;cursor:grab}
+.viewer img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(1);max-width:none;max-height:none;user-select:none;-webkit-user-drag:none}
+dialog::backdrop{background:rgba(0,0,0,.5)}
 </style>
+
+<dialog id="lightbox" aria-label="Image viewer">
+  <div class="lightbox-wrap">
+    <div class="lb-toolbar">
+      <button class="lb-btn" id="prevBtn">←</button>
+      <button class="lb-btn" id="nextBtn">→</button>
+      <button class="lb-btn" id="zoomInBtn">+</button>
+      <button class="lb-btn" id="zoomOutBtn">−</button>
+      <button class="lb-btn" id="resetBtn">Reset</button>
+      <button class="lb-btn" id="closeBtn">Close</button>
+    </div>
+    <div class="viewer" id="viewer"><img id="viewerImg" alt=""></div>
+    <div class="lb-caption" id="lbCaption"></div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  const items = Array.from(document.querySelectorAll('.gallery-item'));
+  const dlg = document.getElementById('lightbox');
+  const viewer = document.getElementById('viewer');
+  const img = document.getElementById('viewerImg');
+  const cap = document.getElementById('lbCaption');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const zoomInBtn = document.getElementById('zoomInBtn');
+  const zoomOutBtn = document.getElementById('zoomOutBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const closeBtn = document.getElementById('closeBtn');
+
+  let idx=-1, scale=1, tx=0, ty=0, dragging=false, lastX=0, lastY=0;
+
+  function openAt(i){
+    idx=i;
+    const el=items[i];
+    img.src=el.dataset.full;
+    img.alt=el.dataset.caption||'';
+    cap.textContent=el.dataset.caption||'';
+    resetView();
+    if(!dlg.open) dlg.showModal();
+  }
+  function resetView(){ scale=1; tx=0; ty=0; apply(); }
+  function apply(){ img.style.transform=`translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(${scale})`; }
+  function clamp(s){ return Math.min(10, Math.max(0.2, s)); }
+
+  items.forEach((el,i)=>{
+    el.addEventListener('click',()=>openAt(i));
+    el.tabIndex=0;
+    el.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' ') openAt(i); });
+  });
+
+  prevBtn.onclick=()=>{ if(idx>0) openAt(idx-1); };
+  nextBtn.onclick=()=>{ if(idx<items.length-1) openAt(idx+1); };
+  zoomInBtn.onclick=()=>{ scale=clamp(scale*1.2); apply(); };
+  zoomOutBtn.onclick=()=>{ scale=clamp(scale/1.2); apply(); };
+  resetBtn.onclick=resetView;
+  closeBtn.onclick=()=> dlg.close();
+
+  dlg.addEventListener('keydown',e=>{
+    if(e.key==='Escape') dlg.close();
+    else if(e.key==='ArrowLeft') prevBtn.click();
+    else if(e.key==='ArrowRight') nextBtn.click();
+    else if(e.key==='+'||e.key==='=') zoomInBtn.click();
+    else if(e.key==='-') zoomOutBtn.click();
+  });
+
+  viewer.addEventListener('wheel',e=>{
+    e.preventDefault();
+    const rect=viewer.getBoundingClientRect();
+    const cx=e.clientX-rect.left-rect.width/2 - tx;
+    const cy=e.clientY-rect.top -rect.height/2 - ty;
+    const old=scale;
+    scale=clamp(scale*(e.deltaY<0?1.15:1/1.15));
+    const k=scale/old-1; tx-=cx*k; ty-=cy*k; apply();
+  },{passive:false});
+
+  viewer.addEventListener('mousedown',e=>{ dragging=true; lastX=e.clientX; lastY=e.clientY; });
+  window.addEventListener('mouseup',()=> dragging=false);
+  window.addEventListener('mousemove',e=>{
+    if(!dragging) return;
+    tx+=e.clientX-lastX; ty+=e.clientY-lastY;
+    lastX=e.clientX; lastY=e.clientY; apply();
+  });
+})();
+</script>
