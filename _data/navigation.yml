@@ -7,8 +7,8 @@ main:
     url: /publications/
   - title: "Portfolio"
     url: /portfolio/
-  - title: "AI Chat"
-    url: /ai/webllm/
-  - title: "AI Tools"
-    url: /ai/tools/
+  # - title: "AI Chat"
+  #   url: /ai/webllm/
+  # - title: "AI Tools"
+  #   url: /ai/tools/
 
