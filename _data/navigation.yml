@@ -10,10 +10,10 @@ main:
     url: /portfolio/
         
   # - title: "Blog Posts"
-  #   url: /year-archive/
+  #   url: /ai/webllm/
 
-#   - title: "Talks"
-#     url: /talks/    
+  - title: "AI"
+    url: /talks/    
 
 #   - title: "Teaching"
 #     url: /teaching/    
