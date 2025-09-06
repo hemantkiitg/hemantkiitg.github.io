@@ -8,22 +8,19 @@ author_profile: true
 {% include base_path %}
 
 {%- comment -%}
-Helper: filter only valid image extensions (jpg/jpeg/png/gif/webp)
+SECTION 1: assets/images/portfolio/
+- Collect all static files under the folder
+- Keep only images with extensions: jpg/jpeg/png/gif/webp (case-insensitive)
 {%- endcomment -%}
-{% capture filter_gallery %}
-  {% assign _ext = f.extname | downcase %}
-  {% if _ext == '.jpg' or _ext == '.jpeg' or _ext == '.png' or _ext == '.gif' or _ext == '.webp' %}
-    {% assign list = list | push: f %}
+{% assign folder1_all = site.static_files | where_exp: "f", "f.path contains '/assets/images/portfolio/'" %}
+{% assign gallery1 = "" | split: "" %}
+{% for f in folder1_all %}
+  {% assign ext = f.extname | downcase %}
+  {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.gif' or ext == '.webp' %}
+    {% assign gallery1 = gallery1 | push: f %}
   {% endif %}
-{% endcapture %}
-
-{%- comment -%} === FIRST SET: assets/images/portfolio/ === {%- endcomment -%}
-{% assign list = "" | split: "" %}
-{% assign all_static = site.static_files | where_exp: "f", "f.path contains '/assets/images/portfolio/'" %}
-{% for f in all_static %}
-  {{ filter_gallery }}
 {% endfor %}
-{% assign gallery1 = list | sort: "path" | reverse %}
+{% assign gallery1 = gallery1 | sort: "path" | reverse %}
 
 <section class="auto-gallery gallery-one">
   <h2>Portfolio (Set 1)</h2>
@@ -45,13 +42,19 @@ Helper: filter only valid image extensions (jpg/jpeg/png/gif/webp)
 
 <hr>
 
-{%- comment -%} === SECOND SET: assets/images/portfolio2/ === {%- endcomment -%}
-{% assign list = "" | split: "" %}
-{% assign all_static = site.static_files | where_exp: "f", "f.path contains '/assets/images/portfolio2/'" %}
-{% for f in all_static %}
-  {{ filter_gallery }}
+{%- comment -%}
+SECTION 2: assets/images/portfolio2/
+(same filtering logic)
+{%- endcomment -%}
+{% assign folder2_all = site.static_files | where_exp: "f", "f.path contains '/assets/images/portfolio2/'" %}
+{% assign gallery2 = "" | split: "" %}
+{% for f in folder2_all %}
+  {% assign ext = f.extname | downcase %}
+  {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.gif' or ext == '.webp' %}
+    {% assign gallery2 = gallery2 | push: f %}
+  {% endif %}
 {% endfor %}
-{% assign gallery2 = list | sort: "path" | reverse %}
+{% assign gallery2 = gallery2 | sort: "path" | reverse %}
 
 <section class="auto-gallery gallery-two">
   <h2>Portfolio2 (Set 2)</h2>
@@ -74,10 +77,34 @@ Helper: filter only valid image extensions (jpg/jpeg/png/gif/webp)
 <style>
   .auto-gallery { margin: 1.5rem 0; }
   .auto-gallery h2 { margin-bottom: .75rem; }
-  .gallery-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .gallery-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   @media (max-width:1100px){ .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width:700px){ .gallery-grid { grid-template-columns: 1fr; } }
-  .gallery-card{ margin:0; padding:.5rem; border:1px solid #e6e6e6; border-radius:.75rem; background:#fff; overflow:hidden; }
-  .gallery-card img{ width:100%; height:auto; display:block; border-radius:.5rem; }
-  .gallery-card figcaption{ text-align:center; font-size:.85rem; color:#666; margin-top:.5rem; word-break:break-word; }
+
+  .gallery-card {
+    margin: 0;
+    padding: .5rem;
+    border: 1px solid #e6e6e6;
+    border-radius: .75rem;
+    background: #fff;
+    overflow: hidden;
+  }
+  .gallery-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: .5rem;
+  }
+  .gallery-card figcaption {
+    text-align: center;
+    font-size: .85rem;
+    color: #666;
+    margin-top: .5rem;
+    word-break: break-word;
+  }
 </style>
