@@ -1,5 +1,5 @@
 ---
-title: "IMG_0960"
+title: "Bacterial cells expressing GFP"
 layout: single
 collection: portfolio
 date: 2025-09-06
