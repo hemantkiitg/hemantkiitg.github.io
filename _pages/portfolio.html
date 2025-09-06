@@ -1,19 +1,36 @@
-<!-- Inline image block (shows right on the page) -->
+---
+layout: archive
+title: "Portfolio"
+permalink: /portfolio/
+author_profile: true
+---
+
+{% include base_path %}
+
+<!-- === Inline Image Block === -->
 <section class="inline-photo">
-  <a href="/assets/images/portfolio/IMG_0960.jpg" target="_blank" rel="noopener">
-    <img src="/assets/images/portfolio/IMG_0960.jpg" alt="IMG_0960" loading="lazy">
-  </a>
+  <img src="/assets/images/portfolio/IMG_0960.jpg" alt="IMG_0960" loading="lazy">
   <figcaption style="text-align:center; color:#666; margin-top:.5rem;">
     IMG_0960
   </figcaption>
 </section>
 
 <style>
-  .inline-photo img{
-    width:100%;
-    height:auto;
-    border-radius:.5rem;
-    display:block;
+  .inline-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: .5rem;
+    display: block;
+    margin: 0 auto;
   }
-  .inline-photo{ margin:1.5rem 0; }
+  .inline-photo {
+    margin: 1.5rem 0;
+  }
 </style>
+
+<hr>
+
+<!-- === Portfolio Collection Loop (existing cards) === -->
+{% for post in site.portfolio reversed %}
+  {% include archive-single.html %}
+{% endfor %}
