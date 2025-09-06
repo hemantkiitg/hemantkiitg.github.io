@@ -1,0 +1,58 @@
+---
+layout: single
+title: "AI Tools (Browser-only)"
+permalink: /ai/tools/
+author_profile: true
+---
+
+<h2>French → English Translator (T5 small)</h2>
+<p><em>Runs locally in your browser. First load may take ~10–20s.</em></p>
+<div style="display:flex;gap:8px;margin:8px 0;">
+  <textarea id="fr" rows="3" style="flex:1;" placeholder="Tape ton texte en français…"></textarea>
+  <button id="btn-translate">Translate</button>
+</div>
+<pre id="en" style="white-space:pre-wrap;border:1px solid #e5e5e5;border-radius:8px;padding:8px;min-height:48px;"></pre>
+
+<hr>
+
+<h2>Summarizer (DistilBART)</h2>
+<p>Paste a paragraph; get a short summary.</p>
+<div style="display:flex;gap:8px;margin:8px 0;">
+  <textarea id="sum-in" rows="6" style="flex:1;" placeholder="Paste text to summarize…"></textarea>
+  <button id="btn-sum">Summarize</button>
+</div>
+<pre id="sum-out" style="white-space:pre-wrap;border:1px solid #e5e5e5;border-radius:8px;padding:8px;min-height:48px;"></pre>
+
+<p id="load-status"></p>
+
+<script type="module">
+  import { pipeline } from "https://cdn.jsdelivr.net/npm/@xenova/transformers@3/dist/transformers.min.js";
+
+  const status = document.getElementById('load-status');
+  status.textContent = "Loading models…";
+
+  // Use small, browser-friendly models
+  // Translator: T5 small via text2text-generation (prefix prompt)
+  const translator = await pipeline("text2text-generation", "Xenova/t5-small");
+  // Summarizer: distilled CNN/DM
+  const summarizer = await pipeline("summarization", "Xenova/distilbart-cnn-6-6");
+
+  status.textContent = "Models ready.";
+
+  document.getElementById('btn-translate').onclick = async () => {
+    const fr = (document.getElementById('fr').value || "").trim();
+    if (!fr) return;
+    document.getElementById('en').textContent = "Translating…";
+    // T5 requires a prompt prefix
+    const out = await translator("translate French to English: " + fr, { max_new_tokens: 128 });
+    document.getElementById('en').textContent = out[0]?.generated_text || "(no output)";
+  };
+
+  document.getElementById('btn-sum').onclick = async () => {
+    const txt = (document.getElementById('sum-in').value || "").trim();
+    if (!txt) return;
+    document.getElementById('sum-out').textContent = "Summarizing…";
+    const out = await summarizer(txt, { max_length: 120, min_length: 40 });
+    document.getElementById('sum-out').textContent = out[0]?.summary_text || "(no output)";
+  };
+</script>
