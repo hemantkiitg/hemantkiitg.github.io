@@ -1,27 +1,13 @@
-# main links links
 main:
+  - title: "Home"
+    url: /
   - title: "Publications"
     url: /publications/
-
+  - title: "Portfolio"
+    url: /portfolio/
+  - title: "AI Chat"
+    url: /ai/webllm/
+  - title: "AI Tools"
+    url: /ai/tools/
   - title: "CV"
     url: /cv/
-
-  - title: "Gallery"
-    url: /portfolio/
-        
-  # - title: "Blog Posts"
-  #   url: /ai/webllm/
-
-  - title: "AI"
-    url: /talks/    
-
-#   - title: "Teaching"
-#     url: /teaching/    
-    
-
-    
-#   - title: "CV"
-#     url: /cv/
-    
-  # - title: "Guide"
-  #   url: /markdown/
