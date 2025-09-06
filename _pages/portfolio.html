@@ -50,7 +50,7 @@ SECTION 2: assets/images/portfolio2/
 {% assign gallery2 = "" | split: "" %}
 {% for f in folder2_all %}
   {% assign ext = f.extname | downcase %}
-  {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.gif' or ext == '.webp' %}
+  {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.gif' or ext == '.webp' or ext == '.heic' %}
     {% assign gallery2 = gallery2 | push: f %}
   {% endif %}
 {% endfor %}
