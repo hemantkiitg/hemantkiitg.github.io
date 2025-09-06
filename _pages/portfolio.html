@@ -8,25 +8,24 @@ author_profile: true
 {% include base_path %}
 
 <h2>Gallery</h2>
-<p>Click any image → zoom with mouse wheel or +/−, drag to pan, ←/→ to switch, Esc to close.</p>
+<p>Click any image. Use +/− to zoom, drag to pan, ←/→ to switch, Esc to close.</p>
 
 {% assign dir1 = "/assets/images/portfolio1/" %}
 {% assign dir2 = "/assets/images/portfolio2/" %}
-{% assign imgs = site.static_files
-  | where_exp:"f","(f.path contains dir1 or f.path contains dir2) and
-                  (f.extname == '.jpg' or f.extname == '.jpeg' or f.extname == '.png' or f.extname == '.gif' or f.extname == '.webp' or f.extname == '.svg')"
-  | sort:"name" %}
 
 <div class="gallery-grid" id="gallery">
-  {% for f in imgs %}
-  <figure class="gallery-item"
-          data-full="{{ f.path | relative_url }}"
-          data-caption="{{ f.name }}">
-    <img src="{{ f.path | relative_url }}"
-         alt="{{ f.name | replace:'_',' ' | replace:'-',' ' }}"
-         loading="lazy">
-    <figcaption class="caption">{{ f.name | replace:'_',' ' }}</figcaption>
-  </figure>
+  {% for f in site.static_files %}
+    {% assign p = f.path %}
+    {% if p contains dir1 or p contains dir2 %}
+      <figure class="gallery-item"
+              data-full="{{ f.path | relative_url }}"
+              data-caption="{{ f.name }}">
+        <img src="{{ f.path | relative_url }}"
+             alt="{{ f.name | replace:'_',' ' | replace:'-',' ' }}"
+             loading="lazy">
+        <figcaption class="caption">{{ f.name | replace:'_',' ' }}</figcaption>
+      </figure>
+    {% endif %}
   {% endfor %}
 </div>
 
@@ -68,64 +67,4 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
   const img = document.getElementById('viewerImg');
   const cap = document.getElementById('lbCaption');
   const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const zoomInBtn = document.getElementById('zoomInBtn');
-  const zoomOutBtn = document.getElementById('zoomOutBtn');
-  const resetBtn = document.getElementById('resetBtn');
-  const closeBtn = document.getElementById('closeBtn');
-
-  let idx=-1, scale=1, tx=0, ty=0, dragging=false, lastX=0, lastY=0;
-
-  function openAt(i){
-    idx=i;
-    const el=items[i];
-    img.src=el.dataset.full;
-    img.alt=el.dataset.caption||'';
-    cap.textContent=el.dataset.caption||'';
-    resetView();
-    if(!dlg.open) dlg.showModal();
-  }
-  function resetView(){ scale=1; tx=0; ty=0; apply(); }
-  function apply(){ img.style.transform=`translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(${scale})`; }
-  function clamp(s){ return Math.min(10, Math.max(0.2, s)); }
-
-  items.forEach((el,i)=>{
-    el.addEventListener('click',()=>openAt(i));
-    el.tabIndex=0;
-    el.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' ') openAt(i); });
-  });
-
-  prevBtn.onclick=()=>{ if(idx>0) openAt(idx-1); };
-  nextBtn.onclick=()=>{ if(idx<items.length-1) openAt(idx+1); };
-  zoomInBtn.onclick=()=>{ scale=clamp(scale*1.2); apply(); };
-  zoomOutBtn.onclick=()=>{ scale=clamp(scale/1.2); apply(); };
-  resetBtn.onclick=resetView;
-  closeBtn.onclick=()=> dlg.close();
-
-  dlg.addEventListener('keydown',e=>{
-    if(e.key==='Escape') dlg.close();
-    else if(e.key==='ArrowLeft') prevBtn.click();
-    else if(e.key==='ArrowRight') nextBtn.click();
-    else if(e.key==='+'||e.key==='=') zoomInBtn.click();
-    else if(e.key==='-') zoomOutBtn.click();
-  });
-
-  viewer.addEventListener('wheel',e=>{
-    e.preventDefault();
-    const rect=viewer.getBoundingClientRect();
-    const cx=e.clientX-rect.left-rect.width/2 - tx;
-    const cy=e.clientY-rect.top -rect.height/2 - ty;
-    const old=scale;
-    scale=clamp(scale*(e.deltaY<0?1.15:1/1.15));
-    const k=scale/old-1; tx-=cx*k; ty-=cy*k; apply();
-  },{passive:false});
-
-  viewer.addEventListener('mousedown',e=>{ dragging=true; lastX=e.clientX; lastY=e.clientY; });
-  window.addEventListener('mouseup',()=> dragging=false);
-  window.addEventListener('mousemove',e=>{
-    if(!dragging) return;
-    tx+=e.clientX-lastX; ty+=e.clientY-lastY;
-    lastX=e.clientX; lastY=e.clientY; apply();
-  });
-})();
-</script>
+  const nextBtn = document.getElementById('nextBtn
