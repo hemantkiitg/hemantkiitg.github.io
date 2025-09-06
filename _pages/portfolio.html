@@ -5,16 +5,9 @@ permalink: /portfolio/
 author_profile: true
 ---
 
-<h2>My Biological Picture Collection</h2>
-<p>Click any thumbnail to open, then zoom/pan inside the lightbox.</p>
+{% include base_path %}
 
-<div class="gallery-grid" id="gallery">
-  <figure class="gallery-item" data-full="assets/images/portfolio/IMG_0960.jpg" data-caption="E. coli microcolony, GFP channel" tabindex="0" role="button" aria-label="Open image">
-    <img src="/assets/images/biology/thumbs/cell1.jpg" alt="E. coli microcolony, GFP channel" loading="lazy">
-    <figcaption class="caption">E. coli microcolony, GFP</figcaption>
-  </figure>
-
-  <!-- add more <figure> blocks here -->
-</div>
-
-<!-- lightbox + script from my earlier message -->
+{%- comment -%} Show newest items first {%- endcomment -%}
+{% for post in site.portfolio reversed %}
+  {% include archive-single.html %}
+{% endfor %}
